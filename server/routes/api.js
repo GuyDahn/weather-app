@@ -8,19 +8,19 @@ const City = require('../models/City')
 router.get('/city/:input', function (req, res) {
     console.log(req.params.input)
     let input = req.params.input
-    request(`https://api.openweathermap.org/data/2.5/weather?q=${input}&APPID=${APIkey}`, 
-    function (error, response, body) {
-        res.send(JSON.parse(body))
-    })
+    request(`https://api.openweathermap.org/data/2.5/weather?q=${input}&APPID=${APIkey}`,
+        function (error, response, body) {
+            res.send(JSON.parse(body))
+        })
 })
 
 
 router.get('/cities', function (req, res) {
     City.find({})
-    .exec(data => res.send(data))
+        .then(data => res.send(data))
 })
 
-router.post('/city', async function(req, res) {
+router.post('/city', async function (req, res) {
     let city = new City({
         name: req.body.name,
         temperature: req.body.main.temp,
@@ -28,16 +28,16 @@ router.post('/city', async function(req, res) {
         conditionPic: req.body.weather[0].icon
     })
     city.save()
-    .then( res.send(`${city.name} added to database`) )
+        .then(res.send(`${city.name} added to database`))
 })
 
-router.delete('/city/:cityName', function(req, res) {
-        City.findOneAndDelete({
-            name: req.params.cityName
-           })
+router.delete('/city/:cityName', function (req, res) {
+    City.findOneAndDelete({
+        name: req.params.cityName
+    })
         .then(res.send(`${req.params.cityName} removed from database`))
-        res.send("can't find the city")
-    
-    
+    res.send("can't find the city")
+
+
 })
 module.exports = router

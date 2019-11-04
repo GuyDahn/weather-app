@@ -11,15 +11,16 @@ const mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/citiesDB', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-        useFindAndModify: false })
+        useFindAndModify: false
+})
 
 app.use(express.static(path.join(__dirname, 'dist')))
 app.use(express.static(path.join(__dirname, 'node_modules')))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
-app.use( '/', api )
+app.use('/', api)
 
 
 
-app.listen(port, () => console.log(`Running server on port ${ port }`))
+app.listen(port, () => console.log(`Running server on port ${port}`))
