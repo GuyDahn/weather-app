@@ -6,10 +6,12 @@ const api = require('./server/routes/api')
 const port = 8080
 const bodyParser = require('body-parser')
 
-
 // Mongoose setup
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/citiesDB', { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
+mongoose.connect('mongodb://localhost/citiesDB', {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useFindAndModify: false })
 
 app.use(express.static(path.join(__dirname, 'dist')))
 app.use(express.static(path.join(__dirname, 'node_modules')))
