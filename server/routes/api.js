@@ -8,7 +8,7 @@ const City = require('../models/City')
 router.get('/city/:input', function (req, res) {
     console.log(req.params.input)
     let input = req.params.input
-    request(`https://api.openweathermap.org/data/2.5/weather?q=${input}&APPID=${APIkey}`,
+    request(`https://api.openweathermap.org/data/2.5/weather?q=${input}&units=metric&APPID=${APIkey}`,
         function (error, response, body) {
             res.send(JSON.parse(body))
         })

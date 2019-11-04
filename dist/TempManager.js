@@ -4,9 +4,8 @@ class TempManager {
     }
 
     async getDataFromDB() {
-        let data = await $.get('/cities')
-        cityData = data
-        console.log(cityData)
+        let cities = await $.get('/cities')
+        this.cityData = cities
     }
 
     async getCityData(cityName) {
@@ -34,4 +33,3 @@ class TempManager {
     }
 }
 
-module.exports = TempManager

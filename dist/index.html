@@ -8,9 +8,10 @@
   <title>Document</title>
 </head>
 <body>
+  <h1 class="main-title">Weather App</h1>
     <div class="container">
         <div class="searchbar">
-          <input type="text" name="" id="city-input" class="city-input" placeholder="Enter city and country">
+          <input type="text" name="" id="city-input" class="city-input" placeholder="Enter city here">
           <button type="submit">Lookup</button>
         </div>
         <div class="cities-container">
@@ -19,18 +20,19 @@
       </div>
   
       <script id="city-template" type="text/x-handlebars-template">
-        {{#each citiesData}}
+        {{#each cityData}}
         <div class="city">
-          <p class="city_name">{{name}}</p>
-          <p class="city_temperature">{{temperature}}</p>
-          <p class="city_condition">{{condition}}</p>
-          <img src="{{icon}}" alt="">
+          <p class="cname">{{name}}</p>
+          <p class="ctemp">{{temperature}}</p>
+          <p class="ccond">{{condition}}</p>
+          <img src="{{icon}}" />
         </div>
         {{/each}}
       </script>
-      <script src="../node_modules/jquery/dist/jquery.js"></script>
-      <script src="../node_modules/handlebars/dist/handlebars.js"></script>
+      <script src="../jquery/dist/jquery.js"></script>
+      <script src="../handlebars/dist/handlebars.js"></script>
       <script src="./Renderer.js"></script>
+      <script src="./TempManager.js"></script>
       <script src="main.js"></script>
 </body>
 </html>
