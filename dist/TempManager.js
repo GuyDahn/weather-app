@@ -9,26 +9,31 @@ class TempManager {
     }
 
     async getCityData(cityName) {
+        let data = await $.get(`/city/${cityName}`)
         try {
-            let data = await $.get(`/city/:${cityName}`)
-            let city = { ...data }
-            this.cityData.push(city)
-        } catch (e) {
+            if (data instanceof Error) {
+                throw new Error(e)
+            } else {
+                let city = { ...data }
+                this.cityData.push(city)
+            }
+        } catch(e) {
             console.log(e)
-        }
+        }  
     }
 
-    saveCity(cityName) {
-        let city = this.cityData.filter(c => c.name === cityName)
-        $.post('/city', city, () => console.log(`saved ${cityName}`))
-    }
+	saveCity(cityName) {
+		const city = this.cityData.find(c => c.name === cityName)
+		$.post(`/city/`, city, () => console.log(`saved ${cityName}`))
+	}
 
     removeCity(cityName) {
         $.ajax({
             method: 'delete',
             url: '/city',
-            body: cityName,
-            success: () => console.log(`removed ${cityName}`)
+            data: { city: cityName },
+            success: () => console.log(`Removed ${cityName}`),
+            error: (e) => console.log(e)
         })
     }
 }
