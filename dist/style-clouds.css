@@ -24,7 +24,6 @@
 
 .cloud:before, .cloud:after {
 	content: '';
-	position: absolute;
 	background: #fff;
 	width: 100px;
 	height: 80px;
