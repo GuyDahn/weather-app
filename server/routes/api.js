@@ -4,17 +4,21 @@ const moment = require('moment')
 const requestPromise = require('request-promise')
 const APIkey = "3120b6a71612b95b3e5f802e203dbbb6"
 const City = require('../models/City')
+const PIC_API_KEY = '14187106-8fdfd5c0151fefc9af925f5f1'
 
 router.get('/city/:input', async function (req, res) {
     let input = req.params.input
     let data = await requestPromise(`https://api.openweathermap.org/data/2.5/weather?q=${input}&units=metric&APPID=${APIkey}`)
+    let data2 = await requestPromise(`https://pixabay.com/api/?key=${PIC_API_KEY}&q=${input}&image_type=photo`)
     let cityData = JSON.parse(data)
-    if (cityData) {
+    let cityPic = JSON.parse(data2)
+    if (cityData,cityPic) {
         let city = {
             name: cityData.name,
             temperature: cityData.main.temp,
             condition: cityData.weather[0].main,
-            conditionPic: cityData.weather[0].icon
+            conditionPic: cityData.weather[0].icon,
+            background: cityPic.hits[0].largeImageURL
         }
         res.send(city)
     } else {

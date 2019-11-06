@@ -15,32 +15,31 @@
       <div class="searchbar">
         <input type="text" name="" id="city-input" class="city-input" placeholder="Enter city here">
         <button type="submit" id="search-btn">Lookup</button>
-        <button id="locateBtn">
-            <i class="fa fa-location-arrow" aria-hidden="true"></i>
-        </button>
       </div>
-    <div class="cloud x1"></div>
+
 
     <div class="cities-container"></div>
 
-    <div class="cloud x2"></div>
-    <div class="cloud x4"></div>
-
     <script id="city-template" type="text/x-handlebars-template">
         {{#each cityData}}
-        <div class="city">
-            <button class="save">&#9745;</button>
-            <button class="remove">&#9746;</button>
-          <p class="cname">{{name}}</p>
+        <div class="city" style="background-image: url({{background}})">
           <p class="ctemp">{{temperature}}&deg;</p>
-          <p class="ccond">{{condition}}</p>
+          <p class="cname">{{name}}</p>
+          <p class="ccond">Mostly {{condition}}</p>
+            <button class="save">save</button>
+            <button class="remove">remove</button>
           <img class="ccondpic" src="http://openweathermap.org/img/wn/{{conditionPic}}@2x.png" />
-          
         </div>
         {{/each}}
       </script>
-    <div class="cloud x3"></div>
-    <div class="cloud x5"></div>
+      <div id="clouds">
+        <!-- <div class="cloud x1"></div> -->
+        <!-- Time for multiple clouds to dance around -->
+        <div class="cloud x2"></div>
+        <div class="cloud x3"></div>
+        <div class="cloud x4"></div>
+        <div class="cloud x5"></div>
+      </div>
 
   <script src="../jquery/dist/jquery.js"></script>
   <script src="../handlebars/dist/handlebars.js"></script>

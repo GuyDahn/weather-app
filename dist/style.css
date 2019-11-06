@@ -2,23 +2,20 @@
 	General
 -----------------*/
 
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
 body {
 	height: 100%;
 	width: 100%;
 	background-color: lightblue;
-	text-shadow: 1px 1px rgb(189, 184, 184);
+	text-shadow: 1.2px 1.2px 1.2px lightblue;
 	font-family: 'Alegreya Sans', sans-serif;
-	position: relative;
 	line-height: 1.5;
 	text-align: center;
-	display: grid;
-	grid-gap: 10px;
-	grid-template-columns: 1fr;
-	grid-template-areas: 
-	"h" 
-	'i' 
-	"c" 
-	"c"
 }
 
 input {
@@ -33,38 +30,35 @@ input {
 
 #search-btn {
 	width: 10vw;
+	min-width: 60px;
 	color: white;
 	background-color: #008CBA;
 	height: 30px;
 	border: solid 1px #ccc;
 	border-radius: 8px;
+	cursor: pointer;
 }
 
 #search-btn:hover {
 	color: #008CBA;
 	background-color: white;
+	cursor: pointer;
 }
 
 h1 {
 	text-shadow: 2px 2px 8px #6D8CA0;
 	color: white;
+	cursor: pointer;
 }
 
 p {
-	color: #6D8CA0;
+	color: rgb(30, 37, 43);
 	font-weight: 700;
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
 }
 
 .cities-container {
-	grid-area: c;
 	flex-direction: row;
-	padding: 5%;
-	padding-top: 0;
+
 }
 
 .city {
@@ -72,41 +66,167 @@ a:hover {
 	border-radius: 8px;
 	box-shadow: 2px 2px 3px 2px rgba(38, 41, 44, 0.7);
 	padding: 5px;
+	margin-top: 15px;
+	margin-left: 15px;
+	margin-right: 15px;
 	font-size: 20px;
 	max-height: 200px;
-
-	grid-template-columns: 1fr;
-
+	display: grid;
+	grid-template-columns: 15% 1fr 30%;
 }
 
-.save{
-	grid-area: "s";
-	display: inline;
+.save {
+	cursor: pointer;
+	margin-top: 50px;
+	justify-self: left;
 	align-self: center;
-
+	width: 10vw;
+	min-width: 60px;
+	color: white;
+	background: none;
+	height: 30px;
+	border: solid 1px #ccc;
+	border-radius: 8px;
 }
 
-.remove{
-	grid-area: "r";
-	display: inline;
-
+.save:hover {
+	color: white;
+	background: grey;
+	cursor: pointer;
 }
-.cname{
-	grid-area: "c";
-	display: inline;
 
-} 
-.ctemp{
-	grid-area: "t";
-	display: inline;
+.remove {
+	cursor: pointer;
+	margin-top: 50px;
+	justify-self: left;
+	align-self: center;
+	width: 10vw;
+	min-width: 60px;
+	color: white;
+	background: none;
+	height: 30px;
+	border: solid 1px #ccc;
+	border-radius: 8px;
 }
-.ccond{
-	grid-area: "x";
-	display: inline;
-} 
+
+.remove:hover {
+	color: white;
+	background: grey;
+	cursor: pointer;
+}
+
+.cname {
+	font-size: 1.75em;
+}
+
+.ctemp {}
+
+.ccond {}
+
 img .ccondpic {
-	grid-area: "p";
-	display: inline;
+	max-height: 65px;
 }
 
+/* Background Animated Clouds 
+/*Time to finalise the cloud shape*/
 
+.cloud {
+	width: 200px;
+	height: 60px;
+	background: #fff;
+	border-radius: 200px;
+	-moz-border-radius: 200px;
+	-webkit-border-radius: 200px;
+	position: relative;
+}
+
+.cloud:before, .cloud:after {
+	content: '';
+	background: #fff;
+	width: 100px;
+	height: 80px;
+	position: absolute;
+	top: -15px;
+	left: 10px;
+	border-radius: 100px;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-webkit-transform: rotate(30deg);
+	transform: rotate(30deg);
+	-moz-transform: rotate(30deg);
+}
+
+.cloud:after {
+	width: 120px;
+	height: 120px;
+	top: -55px;
+	left: auto;
+	right: 15px;
+}
+
+/*Time to animate*/
+
+.x1 {
+	top: -400px;
+	-webkit-transform: scale(0.7);
+	-moz-transform: scale(0.45);
+	transform: scale(0.45);
+	opacity: 0.7;
+	/* -webkit-animation: moveclouds 15s linear infinite; */
+	/* -moz-animation: moveclouds 15s linear infinite; */
+	/* -o-animation: moveclouds 15s linear infinite; */
+}
+
+/*variable speed, opacity, and position of clouds for realistic effect*/
+
+.x2 {
+	left: 200px;
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	transform: scale(0.6);
+	opacity: 0.8;
+	/*opacity proportional to the size*/
+	/*Speed will also be proportional to the size and opacity*/
+	/*More the speed. Less the time in 's' = seconds*/
+	/* -webkit-animation: moveclouds 25s linear infinite; */
+	/* -moz-animation: moveclouds 25s linear infinite; */
+	/* -o-animation: moveclouds 25s linear infinite; */
+}
+
+.x3 {
+	left: -250px;
+	top: -200px;
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0.8;
+	/*opacity proportional to the size*/
+	/* -webkit-animation: moveclouds 20s linear infinite; */
+	/* -moz-animation: moveclouds 20s linear infinite; */
+	/* -o-animation: moveclouds 20s linear infinite; */
+}
+
+.x4 {
+	left: 270px;
+	top: -250px;
+	-webkit-transform: scale(0.75);
+	-moz-transform: scale(0.75);
+	transform: scale(0.75);
+	opacity: 0.75;
+	/*opacity proportional to the size*/
+	/* -webkit-animation: moveclouds 18s linear infinite; */
+	/* -moz-animation: moveclouds 18s linear infinite; */
+	/* -o-animation: moveclouds 18s linear infinite; */
+}
+
+.x5 {
+	top: -150px;
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0.8;
+	/*opacity proportional to the size*/
+	/* -webkit-animation: moveclouds 20s linear infinite; */
+	/* -moz-animation: moveclouds 20s linear infinite; */
+	/* -o-animation: moveclouds 20s linear infinite; */
+}
