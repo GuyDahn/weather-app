@@ -3,7 +3,6 @@
 -----------------*/
 
 * {
-	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
@@ -19,9 +18,8 @@ body {
 }
 
 input {
-	grid-area: i;
-	width: 30%;
-	height: 25px;
+	width: 70vw;
+	height: 30px;
 	margin: 0 auto;
 	border: none;
 	border: solid 1px #ccc;
@@ -30,6 +28,7 @@ input {
 
 #search-btn {
 	width: 10vw;
+	height: 30px;
 	min-width: 60px;
 	color: white;
 	background-color: #008CBA;
@@ -43,6 +42,7 @@ input {
 	color: #008CBA;
 	background-color: white;
 	cursor: pointer;
+	height: 30px;
 }
 
 h1 {
@@ -76,12 +76,13 @@ p {
 }
 
 .save {
+	width: 10vw;
+	height: 30px;
+	min-width: 40px;
 	cursor: pointer;
 	margin-top: 50px;
 	justify-self: left;
 	align-self: center;
-	width: 10vw;
-	min-width: 60px;
 	color: white;
 	background: none;
 	height: 30px;

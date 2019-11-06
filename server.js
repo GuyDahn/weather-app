@@ -7,12 +7,12 @@ const bodyParser = require('body-parser')
 
 // Mongoose setup
 const mongoose = require('mongoose')
-mongoose.connect(process.env.MONGODB_URI||'mongodb://localhost/yourDB')
-// mongoose.connect('mongodb://localhost/citiesDB', {
-//         useNewUrlParser: true,
-//         useUnifiedTopology: true,
-//         useFindAndModify: false
-// })
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/WeatherDB', {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useFindAndModify: false
+})
+// mongoose.connect('mongodb://localhost/citiesDB', )
 
 app.use(express.static(path.join(__dirname, 'dist')))
 app.use(express.static(path.join(__dirname, 'node_modules')))
@@ -22,5 +22,5 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use('/', api)
 
 const PORT = 8080
-app.listen(process.env.PORT || PORT)
+app.listen(process.env.PORT || PORT, () => console.log('now running on port: ' + PORT))
 
