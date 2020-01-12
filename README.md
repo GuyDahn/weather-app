@@ -1,18 +1,13 @@
 # Table Of Contents
 
-- [Reflix](#reflix)
+- [Weather App](#WeatherApp)
   - [Running the project](#running-the-project)
   - [Screenshots](#screenshots)
     - [Select User](#select-user)
-    - [Movie Catalog](#movie-catalog)
-    - [Search Filter](#search-filter)
-    - [Rented Movies](#rented-movies)
-    - [Movie Details](#movie-details)
-    - [Mobile Responsive](#mobile-responsive)
   - [Techstack](#tech-stack)
   - [TODO](#todo)
 
-# Reflix
+# Weather App
 
 Weather-app is a full-stack app made with jquery. User is able to search a city from anywhere in the world and see the weather in the city. The user then can save a city to the database, which will appear in the user's main page when refresh or closed app. User can also remove a city from the DB.
 
