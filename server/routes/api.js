@@ -4,6 +4,7 @@ const requestPromise = require('request-promise')
 const APIkey = "3120b6a71612b95b3e5f802e203dbbb6"
 const City = require('../models/City')
 const PIC_API_KEY = '14187106-8fdfd5c0151fefc9af925f5f1'
+const moment = require('moment')
 
 router.get('/city/:input', async function (req, res) {
     let input = req.params.input
