@@ -22,7 +22,6 @@ $('#search-btn').on('click', function(){
 $('.cities-container').on('click', '.save', function(){
 let cityName = $(this).siblings('.cname').text()
 temp.saveCity(cityName)
-
 })
 
 $('.cities-container').on('click', '.remove', function() {

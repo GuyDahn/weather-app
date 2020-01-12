@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-const moment = require('moment')
 const requestPromise = require('request-promise')
 const APIkey = "3120b6a71612b95b3e5f802e203dbbb6"
 const City = require('../models/City')

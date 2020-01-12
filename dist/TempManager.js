@@ -17,15 +17,15 @@ class TempManager {
                 let city = { ...data }
                 this.cityData.push(city)
             }
-        } catch(e) {
+        } catch (e) {
             console.log(e)
-        }  
+        }
     }
 
-	saveCity(cityName) {
-		const city = this.cityData.find(c => c.name === cityName)
-		$.post(`/city/`, city, () => console.log(`saved ${cityName}`))
-	}
+    saveCity(cityName) {
+        const city = this.cityData.find(c => c.name === cityName)
+        $.post(`/city/`, city, () => console.log(`saved ${cityName}`))
+    }
 
     removeCity(cityName) {
         $.ajax({

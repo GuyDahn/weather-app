@@ -12,7 +12,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/WeatherDB', {
         useUnifiedTopology: true,
         useFindAndModify: false
 })
-// mongoose.connect('mongodb://localhost/citiesDB', )
+mongoose.connect('mongodb://localhost/WeatherDB', )
 
 app.use(express.static(path.join(__dirname, 'dist')))
 app.use(express.static(path.join(__dirname, 'node_modules')))
@@ -23,4 +23,3 @@ app.use('/', api)
 
 const PORT = 8080
 app.listen(process.env.PORT || PORT, () => console.log('now running on port: ' + PORT))
-
