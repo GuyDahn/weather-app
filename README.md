@@ -27,7 +27,7 @@ Demo: https://weatherly-by-guy.herokuapp.com/
 
 Main screen for user to select who they are.
 
-<p align="center"><img src="assets/reflix-home.PNG" width="600" /></p>
+<p align="center"><img src="assets/main-view.JPG" width="600" /></p>
 
 ## Techstack
 - Node.js
