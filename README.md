@@ -13,9 +13,6 @@ Weather-app is a full-stack app made with jquery. User is able to search a city 
 
 Demo: https://weatherly-by-guy.herokuapp.com/
 
-## Table Of Contents
-
-
 ## Running the project
 
 1. Clone the repo.
