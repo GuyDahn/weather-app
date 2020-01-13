@@ -3,7 +3,7 @@
 - [Weather App](#WeatherApp)
   - [Running the project](#running-the-project)
   - [Screenshots](#screenshots)
-    - [Select User](#select-user)
+    - [Main View](#main-view)
   - [Techstack](#tech-stack)
   - [TODO](#todo)
 
