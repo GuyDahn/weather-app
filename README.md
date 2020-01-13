@@ -11,7 +11,7 @@
 
 Weather-app is a full-stack app made with jquery. User is able to search a city from anywhere in the world and see the weather in the city. The user then can save a city to the database, which will appear in the user's main page when refresh or closed app. User can also remove a city from the DB.
 
-Demo: http://https://weatherly-by-guy.herokuapp.com/
+Demo: https://weatherly-by-guy.herokuapp.com/
 
 ## Table Of Contents
 
